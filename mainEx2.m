@@ -18,7 +18,9 @@ for i=1:nTrials
      while p(i)>0.5 || p(i)<0.1
          p(i) = rand;
      end
-     
+end
+  
+for i=1:nTrials
      dlmwrite('data.txt',i,'-append','delimiter',' ','roffset',1);
      dlmwrite('data.txt',p(i),'-append','delimiter',' ');
      [neuralComplexity(i), smallWorldIndex(i)] = runSimulation(nModules,nExcitNeurons,nExcitEdges,nInhibNeurons,p(i),simTime,discardYN)
